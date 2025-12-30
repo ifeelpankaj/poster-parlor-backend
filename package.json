@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "npx nx run api:serve:development --no-inspect --output-style=stream",
-    "start": "npx nx run api:serve:production --no-inspect --output-style=stream",
+    "start": "NODE_ENV=production node apps/api/dist/main.js",
+    "generate-env": "sh scripts/generate-env.sh",
     "build": "npx nx build api",
     "lint": "npx nx lint api",
     "format": "npx nx format:write",
