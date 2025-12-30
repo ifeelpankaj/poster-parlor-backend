@@ -81,7 +81,7 @@ export class AuthService {
     res.cookie('access_token', tokens.accessToken, {
       httpOnly: true,
       secure: this.config.isProduction,
-      sameSite: this.config.isProduction ? 'strict' : 'lax',
+      sameSite: this.config.isProduction ? 'none' : 'lax',
       maxAge: accessTokenMaxAge,
       path: '/',
     });
@@ -90,7 +90,7 @@ export class AuthService {
     res.cookie('refresh_token', tokens.refreshToken, {
       httpOnly: true,
       secure: this.config.isProduction,
-      sameSite: this.config.isProduction ? 'strict' : 'lax',
+      sameSite: this.config.isProduction ? 'none' : 'lax',
       maxAge: refreshTokenMaxAge,
       path: '/',
     });
@@ -144,7 +144,7 @@ export class AuthService {
     res.clearCookie('access_token', {
       httpOnly: true,
       secure: this.config.isProduction,
-      sameSite: this.config.isProduction ? 'strict' : 'lax',
+      sameSite: this.config.isProduction ? 'none' : 'lax',
       path: '/',
     });
 
@@ -152,7 +152,7 @@ export class AuthService {
     res.clearCookie('refresh_token', {
       httpOnly: true,
       secure: this.config.isProduction,
-      sameSite: this.config.isProduction ? 'strict' : 'lax',
+      sameSite: this.config.isProduction ? 'none' : 'lax',
       path: '/',
     });
 
@@ -207,7 +207,7 @@ export class AuthService {
       res.cookie('access_token', accessToken, {
         httpOnly: true,
         secure: this.config.isProduction,
-        sameSite: this.config.isProduction ? 'strict' : 'lax',
+        sameSite: this.config.isProduction ? 'none' : 'lax',
         maxAge: accessTokenExpiry,
         path: '/',
       });
